@@ -4,6 +4,8 @@
 $cert = Get-ChildItem -Path Cert:\LocalMachine\My | Where-Object { $_.Issuer -eq "Microsoft Intune MDM Device CA" }
 Write-Host $cert
 
+# Comment goes here
+
 if ($cert) {
     Write-Host "Intune certificate found on the device"
 } else {
