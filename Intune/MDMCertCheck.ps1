@@ -8,6 +8,7 @@ if ($cert) {
     Write-Host "Intune certificate found on the device"
 } else {
     Write-Host "No Intune cert found."
+    exit 0
 }
 
 $subject = (($cert | Select-Object Subject).Subject).TrimStart("CN=")
