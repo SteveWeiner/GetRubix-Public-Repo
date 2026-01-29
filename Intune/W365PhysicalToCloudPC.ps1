@@ -1,14 +1,3 @@
-# Check for NuGet and install if not found
-$nuget = Get-PackageProvider -Name NuGet -ListAvailable -ErrorAction SilentlyContinue
-
-if (-not ($nuget)) {
-    Install-PackageProvider -Name NuGet -confirm:$false -Force
-    Write-Host "Nuget installed successfully"
-}
-else {
-    Write-Host "NuGet already found."
-}
-
 # Install Microsoft Graph module if not installed
 if (-not (Get-Module -ListAvailable -Name Microsoft.Graph.Intune)) {
     Install-Module Microsoft.Graph.Intune -Force -Scope CurrentUser
